@@ -51,8 +51,10 @@ if __name__ == "__main__":
 
 """)
     secret_key = ''.join(
-        random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)')
-        for i in range(50)
+        random.SystemRandom().choice(
+            'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+        )
+        for _ in range(50)
     )
     replace_content('.env-linux-osx', '<SECRET_KEY>', secret_key)
     replace_content('.env-windows', '<SECRET_KEY>', secret_key)
